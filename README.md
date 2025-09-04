@@ -7,8 +7,31 @@ Experiment:
 Within a specific use case (e.g., summarizing text, answering technical questions), compare the performance, user experience, and response quality of prompting tools across these different AI platforms.
 
 ## Algorithm:
+1.Identify the use case (e.g., summarization or technical Q&A).
+
+2.Select platforms (ChatGPT, Claude, Gemini, Cohere Command, Llama).
+
+3.Design a standard prompt template with clear structure, constraints, and evaluation requirements.
+
+4.Run prompts on each model in controlled conditions (default settings, 3 attempts per model).
+
+5.Collect outputs and anonymize them for unbiased review.
+
+6.Score outputs on rubric: Faithfulness, Instruction Following, Clarity, Controllability, Safety, Latency, Cost.
+
+7.Compare performance across platforms using both quantitative (scores) and qualitative (notes).
+
+8.Conclude trade-offs and give decision heuristics for choosing the right tool.
 
 ## Prompt
+You are a careful analyst. Produce a 180–220 word abstractive summary that reconciles discrepancies in the two texts below. 
+Include:
+1. A timeline of events,
+2. Key actors involved,
+3. Implications,
+4. Three verifiable facts with inline [#] markers,
+and end with a one-sentence uncertainty note.
+
 
 ## Output
 # Evaluation of 2024 Prompting Tools Across Diverse AI Platforms
@@ -192,4 +215,16 @@ Across 2024‑style models, no single platform dominates every axis. For **summa
 **End of Report**
 
 ## Result
+Timeline: The policy was first proposed in March 2024, debated through April, and formally adopted in May.
+Key actors: The Ministry of Technology, the Prime Minister’s office, and two industry associations.
+Implications: The new regulation accelerates AI adoption in education, though small startups face compliance costs.
+Summary: The government introduced AI curriculum guidelines in March 2024, revised them after stakeholder debates, and passed the framework in May. Officials argue the policy ensures ethical use, while industry groups warn about implementation costs. Adoption is expected nationwide in 2025.
+Verifiable facts:
+
+1.The policy was announced in March 2024 [1].
+
+2.Formal adoption occurred in May 2024 [2].
+
+3.Nationwide rollout is planned for 2025 [3].
+Uncertainty: The timeline for enforcement in private schools remains unclear.
 
