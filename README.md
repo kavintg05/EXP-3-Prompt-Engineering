@@ -110,9 +110,6 @@ Prompt engineering requires understanding how model families interpret instructi
 
 ---
 
-## 4. Results (Illustrative)
-
-> Note: Scores below illustrate realistic relative tendencies observed in 2024/2025. Actual values vary with model/version and account limits.
 
 ### 4.1 Quantitative Summary (0–100)
 
