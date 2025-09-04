@@ -181,13 +181,9 @@ Prompt engineering requires understanding how model families interpret instructi
 
 ---
 
-## 9. Conclusion
 
-Across 2024‑style models, no single platform dominates every axis. For **summarization**, choose Claude or ChatGPT when reconciliation and calibration matter; choose Gemini for very long contexts. For **technical Q\&A with code**, ChatGPT and Claude lead, with Llama‑3.1 a strong cost‑efficient alternative and Command‑R+ a concise option for enterprise‑style answers. Effective prompt design—clear output contracts, guardrails, and checklists—consistently improves outcomes regardless of platform.
 
----
-
-## 10. Reproducibility Appendix
+## 9. Reproducibility Appendix
 
 ### A. Full Prompts
 
@@ -263,11 +259,19 @@ assert topo_sort(5, [(0,2),(0,3),(1,3),(3,4)]) in ([0,1,2,3,4],[1,0,2,3,4])
 
 ---
 
-## 11. Acknowledgments & Ethical Notes
+## 10. Acknowledgments & Ethical Notes
 
 * Respect platform terms; avoid pasting proprietary data.
 * Use high‑level reasoning summaries; do not solicit hidden chain‑of‑thought explanations.
 * Report model and date of testing to ensure temporal context.
+
+===
+
+##11. Conclusion
+
+Across 2024‑style models, no single platform dominates every axis. For **summarization**, choose Claude or ChatGPT when reconciliation and calibration matter; choose Gemini for very long contexts. For **technical Q\&A with code**, ChatGPT and Claude lead, with Llama‑3.1 a strong cost‑efficient alternative and Command‑R+ a concise option for enterprise‑style answers. Effective prompt design—clear output contracts, guardrails, and checklists—consistently improves outcomes regardless of platform.
+
+
 
 **End of Report**
 
