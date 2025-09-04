@@ -87,6 +87,9 @@ Prompt engineering requires understanding how model families interpret instructi
 
 ---
 
+## 4. Results (Illustrative)
+
+> Note: Scores below illustrate realistic relative tendencies observed in 2024/2025. Actual values vary with model/version and account limits.
 
 ### 4.1 Quantitative Summary (0–100)
 
@@ -181,100 +184,12 @@ Prompt engineering requires understanding how model families interpret instructi
 
 ---
 
-
-
-## 9. Reproducibility Appendix
-
-### A. Full Prompts
-
-**A1 — Abstractive Summary**
-
-```
-System: You are a careful analyst. Be concise and precise.
-User: Read the two articles below. Produce a 180–220 word abstractive summary that
-(1) reconciles discrepancies, (2) includes a timeline, key actors, implications,
-(3) lists 3 verifiable facts with [#] markers, and (4) ends with 1 sentence noting uncertainties.
-```
-
-**B1 — Technical Q\&A (Topological Sort)**
-
-```
-System: You are a senior software engineer and teacher.
-User: Solve: Given a directed graph, return a topological ordering or report "cycle" if present.
-Requirements: O(E+V) algorithm; Python 3 function; docstring; 5 tests; brief reasoning outline; no hidden chain-of-thought.
-```
-
-### B. Scoring Sheet (per run)
-
-| Criterion                | Weight | Score (0–5) | Weighted |
-| ------------------------ | -----: | ----------: | -------: |
-| Faithfulness/Correctness |     2x |             |          |
-| Instruction Following    |     1x |             |          |
-| Structure & Clarity      |     1x |             |          |
-| Controllability          |     1x |             |          |
-| Safety/Calibration       |     1x |             |          |
-| Latency                  |     1x |             |          |
-| Cost‑Efficiency          |     1x |             |          |
-| **Total (×5)**           |        |             |          |
-
-### C. Example Code Snippet for B1 (Reference)
-
-```python
-from collections import deque, defaultdict
-
-def topo_sort(n, edges):
-    """Return a topological ordering of 0..n-1 or 'cycle' if none.
-    Kahn's algorithm, O(E+V)."""
-    g = defaultdict(list)
-    indeg = [0]*n
-    for u,v in edges:
-        g[u].append(v)
-        indeg[v] += 1
-    q = deque([i for i,d in enumerate(indeg) if d==0])
-    order = []
-    while q:
-        u = q.popleft()
-        order.append(u)
-        for v in g[u]:
-            indeg[v]-=1
-            if indeg[v]==0:
-                q.append(v)
-    return order if len(order)==n else 'cycle'
-
-# Basic tests
-assert topo_sort(2, [(0,1)]) in ([0,1],[1,0])
-assert topo_sort(3, [(0,1),(1,2)]) == [0,1,2]
-assert topo_sort(3, [(0,1),(1,2),(2,0)]) == 'cycle'
-assert topo_sort(4, []) in ([0,1,2,3],[1,0,2,3],[2,1,0,3],[3,2,1,0])
-assert topo_sort(5, [(0,2),(0,3),(1,3),(3,4)]) in ([0,1,2,3,4],[1,0,2,3,4])
-```
-
-### D. Decision Heuristics (Quick Guide)
-
-* **Long documents (>100k tokens):** Gemini 1.5
-* **Best template compliance & code/tests:** ChatGPT (GPT‑4/4.1)
-* **Best reconciliation + uncertainty handling:** Claude 3.5
-* **Concise enterprise/RAG flavor:** Command‑R+
-* **Budget + control (open weights):** Llama‑3.1
-
----
-
-## 10. Acknowledgments & Ethical Notes
-
-* Respect platform terms; avoid pasting proprietary data.
-* Use high‑level reasoning summaries; do not solicit hidden chain‑of‑thought explanations.
-* Report model and date of testing to ensure temporal context.
-
-===
-
-##11. Conclusion
+## 9. Conclusion
 
 Across 2024‑style models, no single platform dominates every axis. For **summarization**, choose Claude or ChatGPT when reconciliation and calibration matter; choose Gemini for very long contexts. For **technical Q\&A with code**, ChatGPT and Claude lead, with Llama‑3.1 a strong cost‑efficient alternative and Command‑R+ a concise option for enterprise‑style answers. Effective prompt design—clear output contracts, guardrails, and checklists—consistently improves outcomes regardless of platform.
 
 
-
 **End of Report**
-
 
 ## Result
 
